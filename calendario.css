@@ -1,0 +1,139 @@
+body {
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+}
+.calendario {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.calendario-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.content-grid {
+    margin-top: 60px;
+    margin-right: auto;
+}
+.content-grid span{
+    font-weight: 700;
+}
+.tem {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+}
+.mes {
+    display: grid;
+    grid-template-columns: max-content max-content max-content max-content max-content max-content max-content;
+    grid-gap: 10px;
+}
+.mes > div {
+    display: grid;
+    width: 65px;
+    text-align: center;
+    justify-items: center;
+}
+.mes p {
+    width: min-content;
+    padding: 5px 20px;
+    border-radius: 7px;
+    color: black;
+    background-color: #fff;
+    border: 1px solid black;
+    animation: bagunca 2s infinite;
+    animation-delay: 20s;
+    transition: .5s;
+}
+.calendario-grid > h2 {
+    text-align: center;
+}
+.container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mes p:hover {
+    background-color: black;
+    color: #fff;
+}
+.mes h4::after {
+    margin-left: auto;
+    margin-right: auto;
+    transition: .7s;
+    display: block;
+    width: 0;
+    height: 2px;
+    content: "";
+    background-color: black;
+}
+.mes h4:hover::after {
+    width: 100%;
+}
+.mes h4:hover {
+    transform: scale(1.2);
+}
+html {
+    cursor: default;
+}
+.nao {
+    color: rgb(255, 255, 255)!important;
+}
+.nao:hover {
+    color: rgb(0, 0, 0)!important;
+}
+
+.feriado {
+    color: black!important;
+    background-color: #90cc6c!important;
+    box-shadow: 0px 0px 5px #90cc6c;
+    border: 1px solid #90cc6c!important;
+    animation: bagunca-feriado 2s infinite!important;
+    animation-delay: 20s!important;
+}
+.feriado:hover {
+    background-color: black!important;
+    color: #90cc6c!important;
+    box-shadow: 0px 0px 5px #90cc6c;
+    border: 1px solid #90cc6c!important;
+}
+
+@keyframes bagunca {
+    0% {
+        transform: rotate(360deg) scale(2) translateX(120px);
+        background-color: #90cc6c;
+    }
+    25% {
+        transform: rotate(14deg) scale(5) translateY(120px);
+        background-color: #00f7ff;
+    }
+    50% {
+        transform: rotate(-3600deg) scale(2) translateY(-120px);
+        background-color: #ffee00;
+    }
+    75% {
+        transform: rotate(3600deg) scale(.1) translateX(-120px);
+        background-color: #e100ff;
+    }
+    100% {
+        transform: rotate(360deg) scale(2) translateX(120px);
+        background-color: #90cc6c;
+    }
+}
+@keyframes bagunca-feriado {
+    0% {
+        transform: scale(5) translateX(-120px);
+    }
+    25% {
+        transform: scale(1) translateY(-120px);
+    }
+    50% {
+        transform: scale(5) translateY(120px);
+    }
+    75% {
+        transform: scale(.1) translateX(120px);
+    }
+    100% {
+        transform: scale(5) translateX(-120px);
+    }
+}
